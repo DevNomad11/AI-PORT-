@@ -55,15 +55,25 @@ cd mvp
 pip install -r requirements.txt
 ```
 
-웹 데모 추가 의존성:
-```bash
-pip install fastapi uvicorn jinja2 websockets
+모든 의존성(학습, 추론, 웹 데모 포함)이 `requirements.txt`에 포함되어 있습니다.
+
+## 모델 체크포인트
+
+학습된 모델 가중치 파일(`.pth`)은 용량 문제로 본 패키지에 포함되어 있지 않습니다.
+GitHub Releases에서 다운로드하거나, 직접 학습하여 생성할 수 있습니다.
+
+**다운로드:**
+본 저장소의 [Releases](../../releases) 페이지에서 `best_model.pth`를 다운로드한 뒤 아래 경로에 배치하세요:
+
+```
+aiport/
+├── checkpoints_apgcc/
+│   └── best_model.pth      # APGCC 모델 (추론/웹 데모에 필요)
+└── mvp/
 ```
 
-APGCC 학습 추가 의존성:
-```bash
-pip install easydict pyyaml
-```
+**직접 학습:**
+체크포인트 없이 학습부터 시작하려면 아래 [사용법 > 1. 모델 학습](#1-모델-학습) 섹션을 참고하세요.
 
 ## 프로젝트 구조
 
